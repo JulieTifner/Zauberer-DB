@@ -13,33 +13,34 @@
     <div class="page">
         <div class="contents" style="display: flex;">
 
+      
             <div class="left-bar">
-                <div class="placeholder">
-                    <input type="file" name="image" id="image">
+                    <div class="image">
+                    <img id="preview-image-before-upload">
                 </div>
                 <h3>Titel</h3>
                 <table>
-                <tr>
-                    <td><strong>Art</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Zeit</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Form</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Rating</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Lagerort</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Erfassung</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Vorführung</strong></td>
-                </tr>
+                    <tr>
+                        <td><strong>Art</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Zeit</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Form</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rating</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lagerort</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Erfassung</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vorführung</strong></td>
+                    </tr>
             
                 </table>
                     <br>
@@ -125,20 +126,38 @@
                             <tr>
                                 <td><strong>Zeit</strong></td>
                                 <td>
-                                    
-                        
                                         <input type="text" name="time" value="" id="">
-                                
                                 </td>
                             </tr>                 
                             </table>
                         </div>
                         <button class="btn">Speichern</button>
-            </form>
-            </div>
-           
+                        <input type="file" name="image" placeholder="Bild wählen" id="image">
+        </form>
+        </div> 
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
  
+    <script type="text/javascript">
+          
+        $(document).ready(function (e) {
+       
+        $('#image').change(function(){
+                
+        let reader = new FileReader();
+     
+        reader.onload = (e) => { 
+     
+          $('#preview-image-before-upload').attr('src', e.target.result); 
+        }
+     
+        reader.readAsDataURL(this.files[0]); 
+       
+       });
+       
+    });
+     
+    </script>
     </div>
 
     </body>
