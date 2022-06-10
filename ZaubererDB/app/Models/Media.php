@@ -7,9 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Media extends Model
 {
+    use HasFactory;
+
+    protected $guarded = [];
+
     protected $fillable = [
-        'image',
+        'path',
     ];
 
-    use HasFactory;
+    public function trick(){
+
+        return $this->belongsToMany(Trick::class);
+    }
 }

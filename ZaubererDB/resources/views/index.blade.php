@@ -15,7 +15,10 @@
     <h2>Fritz's Datenbank</h2>
             <div class="wrapper">
                 @foreach($tricks as $trick)
-                    <div class="box">1
+                    <div class="box">
+                        <div class="pic">
+                                <img src="/storage/" alt="">
+                        </div>
                         <div class="content">
                             <h3>{{ $trick->trickname }}</h3>
                                 <table>

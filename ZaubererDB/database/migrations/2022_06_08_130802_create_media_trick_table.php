@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTrickMediaTable extends Migration
+class CreateMediaTrickTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTrickMediaTable extends Migration
      */
     public function up()
     {
-        Schema::create('trick_media', function (Blueprint $table) {
+        Schema::create('media_trick', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('trick_id');
             $table->unsignedBigInteger('media_id');
@@ -31,6 +31,6 @@ class CreateTrickMediaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trick_media');
+        Schema::dropIfExists('media_trick');
     }
 }

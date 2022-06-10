@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Trick_media extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }

@@ -9,6 +9,7 @@ class Trick extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
 
     protected $fillable = [
         'trickname',
@@ -44,5 +45,11 @@ class Trick extends Model
     public function performance(){
 
         return $this->belongsTo(Performance::class);
+    }
+
+    
+    public function media(){
+
+        return $this->belongsToMany(Media::class);
     }
 }

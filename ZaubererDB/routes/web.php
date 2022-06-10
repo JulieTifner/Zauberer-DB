@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\TrickController::class, 'index']);
 Route::get('/create', [App\Http\Controllers\TrickController::class, 'create']);
-Route::post('/store', [App\Http\Controllers\TrickController::class, 'store']);
+Route::post('/store', [App\Http\Controllers\TrickController::class, 'store'])->name('store');
 
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
 Route::get('/account', [App\Http\Controllers\AccountController::class, 'index']);

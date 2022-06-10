@@ -8,16 +8,16 @@
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
     <body>
-       
         @include('components.nav')
     <div class="page">
+        <form action="{{route('store') }}" enctype="multipart/form-data" method="POST">
         <div class="contents" style="display: flex;">
 
-      
             <div class="left-bar">
-                    <div class="image">
+                <div class="image">
                     <img id="preview-image-before-upload">
                 </div>
+                
                 <h3>Titel</h3>
                 <table>
                     <tr>
@@ -52,7 +52,7 @@
             
             </div>
             <div class="right-bar">
-                <form action="/store" enctype="multipart/form-data" method="POST">
+    
                     @csrf
                     <label for="Trickname">Trickname</label><br>
                     <input type="text" name="trickname" id="">

@@ -62,7 +62,7 @@
         <select class="dropbtn" id="type" name="type" value="ddd">
             <option style="display: none;">Erfassung</option>
             @foreach($saved_at as $saved)
-                <option value="" name="type">{{ date('d-m-Y', strtotime($saved->created_at));}}</option>
+                <option value="" name="type">{{ date('m-Y', strtotime($saved->created_at));}}</option>
             @endforeach
         </select>
     </div>
